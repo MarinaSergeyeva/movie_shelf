@@ -1,10 +1,18 @@
 .header {
-  display: flex;
-  justify-content: space-between;
   background-size: cover;
+  //   background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
   background-position: center;
   background-repeat: no-repeat;
   color: #fff;
+  padding: 48px 0 0px;
+  z-index: 2;
+}
+
+.navigationWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 42px;
 }
 
 .logoWrapper {
@@ -14,7 +22,7 @@
 
 .logoWrapper p {
   font-size: 29px;
-  line-height: 35px;
+  line-height: 1.2;
   font-weight: 500;
 }
 
@@ -27,20 +35,62 @@
   margin-right: 12px;
 }
 
-.navigation ul {
+.navigationList {
   display: flex;
 }
 
-.navigation ul li:first-child {
+.navigationListItem {
+  border-bottom: 3px solid transparent;
+}
+
+.navigationListItem:hover {
+  border-bottom: 3px solid $main-color;
+}
+
+.navigationListItem:first-child {
   margin-right: 40px;
 }
 
-.navigation ul li a {
+.navigationListItem a {
   color: #fff;
   text-transform: uppercase;
   font-weight: 500;
   font-size: 12px;
-  line-height: 14px;
+  line-height: 1.17;
+}
+
+.searchWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.searchField {
+  width: 100%;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.17;
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.5);
+  margin-bottom: 97px;
+  justify-content: center;
+}
+
+.searchField::placeholder {
+  color: #fff;
+  background: url('../images/icon-search.png');
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+.searchField:focus {
+  outline: none;
+}
+
+.serchAllert {
+  display: none;
+  color: rgba(255, 0, 27, 1);
 }
 
 @media (min-width: 20px) and (max-width: 320px) {
@@ -49,18 +99,29 @@
   }
 
   .header {
-    background-image: url('../images/header-s.png');
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url('../images/header-s.png');
   }
 }
 
 @media (min-width: 321px) and (max-width: 767px) {
+  .logoWrapper p {
+    display: none;
+  }
+
   .header {
-    background-image: url('../images/header-md.png');
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url('../images/header-md.png');
   }
 }
 
 @media (min-width: 768px) {
   .header {
-    background-image: url('../images/header-l.png');
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url('../images/header-l.png');
+  }
+
+  .searchField {
+    width: 336px;
   }
 }

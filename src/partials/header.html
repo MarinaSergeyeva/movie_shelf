@@ -1,15 +1,21 @@
 <header class='header'>
     <div class="container">
-        <div class="logoWrapper">
-            <!-- <img alt='logo-icon' src='./images/icon-logo.png' width='24' height='24'> -->
-            <a class='headerLogo'></a>
-            <p>Filmoteka</p>
+        <div class="navigationWrapper">
+            <div class="logoWrapper">
+                <!-- <img alt='logo-icon' src='./images/icon-logo.png' width='24' height='24'> -->
+                <a class='headerLogo'></a>
+                <p>Filmoteka</p>
+            </div>
+            <nav class='navigation'>
+                <ul class='navigationList'>
+                    <li class='navigationListItem'><a href="#">Home</a></li>
+                    <li class='navigationListItem'><a href="#">My Library</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav class='navigation'>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">My Library</a></li>
-            </ul>
-        </nav>
+        <div class="searchWrapper">
+            <input type="text" class="searchField" placeholder='Поиск фильмов'>
+            <p class="serchAllert">Error</p>
+        </div>
     </div>
 </header>
