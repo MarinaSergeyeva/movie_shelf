@@ -4,4 +4,35 @@
  */
 
 // Стили для файла с примером HTML-фрагмента
+@import './base.scss';
+
 @import './example';
+@import './sections/header.scss';
+
+.container {
+  margin: 0 auto;
+}
+
+@media (min-width: 20px) and (max-width: 320px) {
+  .container {
+    width: 280px;
+  }
+}
+
+@media (min-width: 321px) and (max-width: 767px) {
+  .container {
+    width: 320px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .container {
+    width: 618px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    width: 884px;
+  }
+}
