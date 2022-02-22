@@ -35,7 +35,8 @@ export const getMovieDetails = async movieId => {
 export const getGenres = async () => {
   try {
     const result = await axios.get(`${API_BASE}/genre/movie/list?api_key=${API_KEY}`);
-    return result;
+    userData.genres = [...result.data.genres];
+    return userData.genres;
   } catch (error) {
     console.log('getGenresError', error);
   }
