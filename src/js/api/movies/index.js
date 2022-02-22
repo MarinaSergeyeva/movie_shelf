@@ -31,3 +31,12 @@ export const getMovieDetails = async movieId => {
     console.log('getMovieDetailsError', error);
   }
 };
+
+export const getGenres = async () => {
+  try {
+    const result = await axios.get(`${API_BASE}/genre/movie/list?api_key=${API_KEY}`);
+    return result;
+  } catch (error) {
+    console.log('getGenresError', error);
+  }
+};

@@ -1,0 +1,68 @@
+.pageContentWrapper {
+  padding: 60px 0px 50px;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.galleryItemImage {
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.galleryItemTitle {
+  font-size: 12px;
+  line-height: 1.16;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.galleryItemInfo {
+  font-size: 12px;
+  line-height: 1.16;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: $main-color;
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .pageContentWrapper {
+    padding: 20px 0px 40px;
+  }
+
+  .galleryItem:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .galleryItem {
+    width: calc((100% - 30px) / 2);
+  }
+
+  .galleryItem:not(:nth-last-child(-n + 2)) {
+    margin-bottom: 30px;
+  }
+
+  .galleryItem:nth-child(odd) {
+    margin-right: 30px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .galleryItem {
+    width: calc((100% - 30px * 2) / 3);
+  }
+
+  .galleryItem:not(:nth-child(3n-3)) {
+    margin-right: 30px;
+  }
+
+  .galleryItem:not(:nth-last-child(-n + 3)) {
+    margin-bottom: 30px;
+  }
+}

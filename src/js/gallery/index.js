@@ -1,10 +1,18 @@
-import { createMovieCart } from '../components/cart';
+import MovieCard from '../components/card';
 
-export const gallery = movies => {
-  const galleryWrapper = document.querySelector('.pageContentWrapper');
-  const markup = movies.reduce((acc, movie) => {
-    acc += createMovieCart(movie);
-    return acc;
-  }, '');
-  return (galleryWrapper.innerHTML = markup);
-};
+export default class Gallery {
+  constructor(items) {
+    this.items = items;
+  }
+
+  createGalleryMarkup() {
+    const galleryWrapper = document.querySelector('.pageContentWrapper');
+    const markup = this.items.reduce((acc, item) => {
+      acc += new MovieCard(item).createCardMarkup();
+
+      return acc;
+    }, '');
+
+    return (galleryWrapper.innerHTML = `<ul class="gallery">${markup}</ul>`);
+  }
+}
